@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas test</title>
+  <script type="text/javascript">
+    function draw() {
+      let canvas = document.getElementById('test');
+      if(canvas.getContext) {
+        let ctxt = canvas.getContext('2d');
+
+        ctxt.fillStyle = 'red';
+        ctxt.fillRect(0, 0, 50, 50);
+        // offsetX, offsetY, width, height
+
+        ctxt.fillStyle = 'blue';
+        ctxt.fillRect(50, 50, 50, 50);
+      }
+    }
+  </script>
+
+  <style type="text/css">
+    canvas { border: 1px solid; }
+  </style>
+  
+</head>
+
+
+<body onload="draw();">
+<!-- 
+  canvas를 그리는 draw();를 문서 load시에 실행한다.
+  setTimeout(), setInterval()로 핸들링할 수도 있다.
+-->
+
+  <canvas id="test" width="200" height="200"></canvas>
+
+</body>
+</html>
